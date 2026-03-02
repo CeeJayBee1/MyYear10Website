@@ -12,6 +12,7 @@ html {
 /* reset for images to ensure they ar 100% of the parent container width */
 img {
     width: 100%;
+    image-rendering: pixelated;
 }
 
 /* The hero section styling- use your OWN Hero Image URL here */
@@ -39,7 +40,7 @@ img {
     color: white;
     font-size: 2em;
     padding: 0.1em 3em;
-    background-color: rgb(71, 71, 71);
+    background-color: rgb(145, 120, 100);
 }
 
 /* Three column grid with a nice big gap */
@@ -55,8 +56,8 @@ img {
 
 /* Styling for the individual topic cards rounded edges background color and a drop shadow */
 .topic-card{
-    background-color: rgb(71, 71, 71);
-    color: white;
+    background-color: rgb(241, 223, 242);
+    color: black;
     padding: 1em;
     border-radius: 0.5em;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
@@ -73,7 +74,7 @@ img {
 
 /* Styling for a footer section to take a bit of spcae at the bottom of the page */
 .footer{
-    background-color: rgb(71, 71, 71);
+    background-color: rgb(145, 120, 100);
     color: white;
     text-align: right;
     padding: 3em 3em;
