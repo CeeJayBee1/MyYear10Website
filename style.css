@@ -1,12 +1,22 @@
 /* A simple css reset */
+
+/* 1. Define the font name and point to the .ttf file location */
+@font-face {
+  font-family: 'TrajanProCustom';
+  src: url('images/Trajan\ Pro\ Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* Helps with performance/loading */
+}
 body,
 html {
     margin: 0;
     padding: 0;
     height: 100%;
     /* The Font Family- Really important!! */
-    font-family: Arial, sans-serif;
+    font-family: "Times New Roman", Times, serif;
     box-sizing: border-box;
+    
 }
 
 /* reset for images to ensure they ar 100% of the parent container width */
@@ -37,10 +47,11 @@ img {
 
 /* nice big font on a banner style background */
 .topic-title{
-    color: white;
+    font-weight: thin;
+    color: rgb(115, 90, 70);
     font-size: 2em;
     padding: 0.1em 3em;
-    background-color: rgb(145, 120, 100);
+    background-color: rgb(143, 179, 177);
 }
 
 /* Three column grid with a nice big gap */
@@ -52,6 +63,8 @@ img {
     width: 70%;
     /* top margin of 3em and center right/left */
     margin: 3em auto;
+    font-family: 'TrajanProCustom', serif;
+    font-weight: thin;
 }
 
 /* Styling for the individual topic cards rounded edges background color and a drop shadow */
@@ -74,7 +87,9 @@ img {
 
 /* Styling for a footer section to take a bit of spcae at the bottom of the page */
 .footer{
-    background-color: rgb(145, 120, 100);
+    font-family: 'TrajanProCustom', serif;
+    font-weight: thin;
+    background-color: rgb(143, 179, 177);
     color: white;
     text-align: right;
     padding: 3em 3em;
