@@ -88,7 +88,7 @@ img {
 /* Styling for a footer section to take a bit of spcae at the bottom of the page */
 .footer{
     font-family: 'TrajanProCustom', serif;
-    font-weight: thin;
+    font-weight: 1;
     background-color: rgb(143, 179, 177);
     color: white;
     text-align: right;
