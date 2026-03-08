@@ -84,7 +84,49 @@ img {
     text-align: center;
 }
 
+.about-me-content{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 6em;
+    /* bring the whole section in off the sides of the page */
+    width: 100%;
+    /* top margin of 3em and center right/left */
+    margin: 3em auto;
+    font-family: 'TrajanProCustom', serif;
+    font-weight: thin;
+}
 
+/* Styling for the individual topic cards rounded edges background color and a drop shadow */
+.about-me-card{
+    background-color: rgb(241, 223, 242);
+    color: black;
+    padding: 1em;
+    border-radius: 0.5em;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling for the topic card titles */
+.about-me-text{
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+    /* center align text */
+    text-align: center;
+}
+.about-me-small-text{
+    font-size: 0.8em;
+    margin-bottom: 0.5em;
+    /* center align text */
+    text-align: center;
+}
+.about-me-tiny-text {
+    font-size: 0.005em;
+    margin-bottom: 0.5em;
+    text-align: center;
+    /* Add these lines */
+    display: block;      /* Ensures the element takes up the full width available */
+    width: 100%;        /* Forces it to span the width of its parent card */
+    line-height: 1.2;   /* Normalizes the vertical spacing */
+}
 /* Styling for a footer section to take a bit of spcae at the bottom of the page */
 .footer{
     font-family: 'TrajanProCustom', serif;
