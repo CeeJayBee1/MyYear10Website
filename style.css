@@ -1,31 +1,53 @@
-/* A simple css reset */
+/* --- 1. Custom Font Definitions --- */
 
-/* 1. Define the font name and point to the .ttf file location */
 @font-face {
   font-family: 'TrajanProCustom';
   src: url('images/Trajan\ Pro\ Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
-  font-display: swap; /* Helps with performance/loading */
+  font-display: swap;
+} /* Added missing brace here */
+
+@font-face {
+  font-family: 'LEVIBRUSH';
+  src: url('images/LEVIBRUSH.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
+
+/* --- 2. The Special Class (.:3) --- */
+
+/* Note: In CSS, we must escape the colon with a backslash \ 
+   so the browser doesn't think it's a pseudo-selector. */
+.colon-three {
+    font-weight: normal; /* "thin" is not a standard CSS keyword for weight */
+    color: rgb(115, 90, 70);
+    font-size: 2em;
+    padding: 0.1em 3em;
+    background-color: rgb(143, 179, 177);
+    font-family: 'LEVIBRUSH', cursive;
+    color: inherit; /* Adjust color as needed */
+}
+
+/* --- 3. Base Reset & Layout --- */
+
 body,
 html {
     margin: 0;
     padding: 0;
     height: 100%;
-    /* The Font Family- Really important!! */
     font-family: "Times New Roman", Times, serif;
     box-sizing: border-box;
-    
 }
 
-/* reset for images to ensure they ar 100% of the parent container width */
 img {
     width: 100%;
     image-rendering: pixelated;
 }
 
-/* The hero section styling- use your OWN Hero Image URL here */
+/* --- 4. Hero Section --- */
+
 .hero {
     background-image: url('images/Website\ header.png');
     height: 25vh;
@@ -39,36 +61,31 @@ img {
     position: relative;
 }
 
-/* BIG text styling for the hero section text */
 .hero-text {
     font-size: 4em;
     font-weight: bold;
 }
 
-/* nice big font on a banner style background */
-.topic-title{
-    font-weight: thin;
+/* --- 5. Content Sections --- */
+
+.topic-title {
+    font-weight: normal; /* "thin" is not a standard CSS keyword for weight */
     color: rgb(115, 90, 70);
     font-size: 2em;
     padding: 0.1em 3em;
     background-color: rgb(143, 179, 177);
 }
 
-/* Three column grid with a nice big gap */
-.topic-content{
+.topic-content {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 6em;
-    /* bring the whole section in off the sides of the page */
     width: 70%;
-    /* top margin of 3em and center right/left */
     margin: 3em auto;
     font-family: 'TrajanProCustom', serif;
-    font-weight: thin;
 }
 
-/* Styling for the individual topic cards rounded edges background color and a drop shadow */
-.topic-card{
+.topic-card {
     background-color: rgb(241, 223, 242);
     color: black;
     padding: 1em;
@@ -76,28 +93,24 @@ img {
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Styling for the topic card titles */
-.topic-card-text{
+.topic-card-text {
     font-size: 1.5em;
     margin-bottom: 0.5em;
-    /* center align text */
     text-align: center;
 }
 
-.about-me-content{
+/* --- 6. About Me Section --- */
+
+.about-me-content {
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: 1fr;
     gap: 200px;
-    /* bring the whole section in off the sides of the page */
     width: 100%;
-    /* top margin of 3em and center right/left */
     margin: 3em auto;
     font-family: 'TrajanProCustom', serif;
-    font-weight: thin;
 }
 
-/* Styling for the individual topic cards rounded edges background color and a drop shadow */
-.about-me-card{
+.about-me-card {
     background-color: rgb(241, 223, 242);
     color: black;
     padding: 1em;
@@ -107,131 +120,89 @@ img {
     margin: 0 auto;
 }
 
-/* Styling for the topic card titles */
-.about-me-text{
-    font-size: 1.5em;
-    margin-bottom: 0.5em;
-    /* center align text */
+.about-me-text, .about-me-small-text {
     text-align: center;
-}
-.about-me-small-text{
-    font-size: 0.8em;
     margin-bottom: 0.5em;
-    /* center align text */
-    text-align: center;
 }
+
+.about-me-text { font-size: 1.5em; }
+.about-me-small-text { font-size: 0.8em; }
+
 .about-me-tiny-text {
-    font-size: 0.005em;
+    font-size: 0.005em; /* Extremely small - likely invisible to most users */
     margin-bottom: 0.5em;
     text-align: center;
-    /* Add these lines */
-    display: block;      /* Ensures the element takes up the full width available */
-    width: 100%;        /* Forces it to span the width of its parent card */
-    line-height: 1.2;   /* Normalizes the vertical spacing */
+    display: block;
+    width: 100%;
+    line-height: 1.2;
 }
-/* Styling for a footer section to take a bit of spcae at the bottom of the page */
-.footer{
+
+/* --- 7. Navigation & UI Components --- */
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover { color: #f1f1f1; }
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.footer {
     font-family: 'TrajanProCustom', serif;
-    font-weight: 1;
     background-color: rgb(143, 179, 177);
     color: white;
     text-align: right;
     padding: 3em 3em;
 }
 
-.icon-bar {
-  width: 90px; /* Set a specific width */
-  background-color: #555; /* Dark-grey background */
-}
-
-.icon-bar a {
-  display: block; /* Make the links appear below each other instead of side-by-side */
-  text-align: center; /* Center-align text */
-  padding: 16px; /* Add some padding */
-  transition: all 0.3s ease; /* Add transition for hover effects */
-  color: white; /* White text color */
-  font-size: 36px; /* Increased font-size */
-}
-
-.icon-bar a:hover {
-  background-color: #000; /* Add a hover color */
-}
-
-.active {
-  background-color: #04AA6D; /* Add an active/current color */
-}
+/* Hamburger Icon */
 .container {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  z-index: 10;
-  display: inline-block;
-  cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+    display: inline-block;
+    cursor: pointer;
 }
 
 .bar1, .bar2, .bar3 {
-  width: 35px;
-  height: 5px;
-  background-color: #333;
-  margin: 6px 0;
-  transition: 0.4s;
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
 }
 
-.change .bar1 {
-  transform: translate(0, 11px) rotate(-45deg);
-}
+/* Animations */
+.change .bar1 { transform: translate(0, 11px) rotate(-45deg); }
+.change .bar2 { opacity: 0; }
+.change .bar3 { transform: translate(0, -11px) rotate(45deg); }
 
-.change .bar2 {opacity: 0;}
-
-.change .bar3 {
-  transform: translate(0, -11px) rotate(45deg);
-}
-/* The side navigation menu */
-.sidenav {
-  height: 100%; /* 100% Full-height */
-  width: 0; /* 0 width - change this with JavaScript */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Stay on top */
-  top: 0;
-  left: 0;
-  background-color: #111; /* Black*/
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 60px; /* Place content 60px from the top */
-  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
-}
-
-/* The navigation menu links */
-.sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
-
-/* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
-  color: #f1f1f1;
-}
-
-/* Position and style the close button (top right corner) */
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
-
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-#main {
-  transition: margin-left .5s;
-  padding: 20px;
-}
-
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+    .sidenav { padding-top: 15px; }
+    .sidenav a { font-size: 18px; }
 }
